@@ -14,4 +14,4 @@ class PluginFactory{
     }
 }
 
-module.exports = new PluginFactory();
+module.exports = new PluginFactory().getPlugins();
