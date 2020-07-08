@@ -45,7 +45,7 @@ function PresetComponent(fileType, fileName, filePath) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, inquirer.prompt([
                         {
-                            name: '请选择服务模板',
+                            name: 'action',
                             type: 'checkbox',
                             message: "\u9488\u5BF9 hooks \u548C redux \u505A\u517C\u5BB9",
                             choices: [
@@ -64,7 +64,7 @@ function PresetComponent(fileType, fileName, filePath) {
                     if (!action) {
                         return [2 /*return*/];
                     }
-                    console.log(action);
+                    console.log(action, action.length, 111);
                     return [2 /*return*/];
             }
         });

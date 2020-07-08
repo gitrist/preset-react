@@ -5,9 +5,9 @@ import { CheckExist } from '../../../framework/utils/checkExist/CheckExist'
 
 export async function PresetComponent(fileType: string, fileName: string, filePath?: string) {
     // CheckExist()
-    const { action } = await inquirer.prompt([
+    const {action} = await inquirer.prompt([
         {
-            name: '请选择服务模板',
+            name: 'action',
             type: 'checkbox',
             message: `针对 hooks 和 redux 做兼容`,
             choices: [
@@ -21,12 +21,11 @@ export async function PresetComponent(fileType: string, fileName: string, filePa
             default: 'simple'
         }
     ])
-
     if(!action){
         return;
     }
 
-    console.log(action)
+    console.log(action,action.length,111)
 
     // if(action!=='simple'){
     //     console.log(chalk.green('功能开发中！敬请期待！(⊙o⊙)…'))
