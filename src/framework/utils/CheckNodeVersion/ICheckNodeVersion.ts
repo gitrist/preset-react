@@ -1,5 +1,5 @@
 export interface ICheckNodeVersion{
-    expect: string;
-    name: string;
-    getCheckNodeVersion(): void;
+    expect: string,
+    name: string,
+    getCheckNodeVersion(): void,
 }
