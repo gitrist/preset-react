@@ -1,33 +1,32 @@
 {
-    "compilerOptions": {
-      "baseUrl": "./src",
-      "outDir": "./dist/",
-      "module": "commonjs",
-      "target": "es5",
-      "lib": ["es6", "dom"],
-      "sourceMap": true, 
-      "allowJs": true,
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-      "jsx": "react",
-      "moduleResolution": "node",
-      "rootDir": ".",
-      "forceConsistentCasingInFileNames": true,
-      "noImplicitReturns": true,
-      "noImplicitThis": true,
-      "noImplicitAny": true,
-      "importHelpers": true,
-      "suppressImplicitAnyIndexErrors": true,
-      "noUnusedLocals": true,
-      "allowSyntheticDefaultImports": true,
-      "paths": {
-        "~/*": ["*"],
-        "~framework/*": ["framework/*"],
-        "~components/*": ["solution/template/components/*"]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es2015"
+    ],
+    "outDir": "./dist/",
+    "module": "commonjs",
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": false,
+    "newLine": "LF",
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "alwaysShowRuleFailuresAsWarnings": true
       }
-    },
-    "exclude": [
-      "node_modules",
-      "dist",
     ]
-  }
+  },
+  "formatCodeOptions": {
+    "indentSize": 2,
+    "tabSize": 2
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+  ]
+}

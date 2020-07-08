@@ -4,8 +4,9 @@
   "description": "前端react模板生成器",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node index.ts",
-    "build": "rimraf dist && tsc -b"
+    "start": "tsnd --respawn ./src/index.ts",
+    "build": "rimraf dist && tsc -b",
+    "test": "ts-node ./src/index.ts -V"
   },
   "repository": {
     "type": "git",
@@ -15,21 +16,23 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@types/chalk": "^2.2.0",
-    "@types/react": "^16.9.41",
-    "@types/react-dom": "^16.9.8",
-    "chalk": "^4.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "ts-node": "^8.10.2",
     "typescript": "^3.9.6"
   },
   "engines": {
     "node": ">=8.9"
   },
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/node": "^14.0.14",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
     "@types/semver": "^7.3.1",
-    "rimraf": "^3.0.2"
+    "chalk": "^4.1.0",
+    "commander": "^5.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.50"
   }
 }

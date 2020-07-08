@@ -1,14 +1,15 @@
-var semver = require('semver');
-var chalk = require('chalk');
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CheckNodeVersion = void 0;
+var semver = require("semver");
+var chalk = require("chalk");
 var CheckNodeVersionFactory = /** @class */ (function () {
-    function CheckNodeVersionFactory(expect, id) {
+    function CheckNodeVersionFactory(expect, name) {
         var _this = this;
         this.getCheckNodeVersion = function () {
-            console.log(process, chalk);
             if (!semver.satisfies(process.version, _this.expect)) {
-                console.log(chalk.red('You are using Node ' + process.version + ', but this version of ' + _this.id +
+                console.log(chalk.red('You are using Node ' + process.version + ', but this version of ' + _this.name +
                     ' requires Node ' + _this.expect + '.\nPlease upgrade your Node version.'));
-                process.exit(1);
             }
             if (semver.satisfies(process.version, '9.x')) {
                 console.log(chalk.red("You are using Node " + process.version + ".\n" +
@@ -18,9 +19,9 @@ var CheckNodeVersionFactory = /** @class */ (function () {
             }
         };
         this.expect = expect;
-        this.id = id;
+        this.name = name;
     }
     return CheckNodeVersionFactory;
 }());
-exports.CheckNodeVersionFactory = CheckNodeVersionFactory;
+exports.CheckNodeVersion = CheckNodeVersionFactory;
 //# sourceMappingURL=CheckNodeVersion.js.map
