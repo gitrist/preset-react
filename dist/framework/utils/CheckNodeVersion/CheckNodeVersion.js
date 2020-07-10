@@ -10,6 +10,7 @@ var CheckNodeVersionFactory = /** @class */ (function () {
             if (!semver.satisfies(process.version, _this.expect)) {
                 console.log(chalk.red('You are using Node ' + process.version + ', but this version of ' + _this.name +
                     ' requires Node ' + _this.expect + '.\nPlease upgrade your Node version.'));
+                process.exit(1);
             }
             if (semver.satisfies(process.version, '9.x')) {
                 console.log(chalk.red("You are using Node " + process.version + ".\n" +

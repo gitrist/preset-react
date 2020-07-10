@@ -19,6 +19,7 @@ class CheckNodeVersionFactory implements ICheckNodeVersion.ICheckNodeVersion {
                 'You are using Node ' + process.version + ', but this version of ' + this.name +
                 ' requires Node ' + this.expect + '.\nPlease upgrade your Node version.'
             ))
+            process.exit(1);
         }
         if (semver.satisfies(process.version, '9.x')) {
             console.log(chalk.red(

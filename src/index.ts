@@ -3,13 +3,15 @@ import * as program from 'commander';
 import * as chalk from 'chalk';
 import * as CheckNodeVersionFactory from "./framework/utils/checkNodeVersion/CheckNodeVersion";
 import * as PackageInfo from '../package.json';
+import * as fs from 'fs';
 import { Config } from './solutions/shared/config/config';
 import { infoError } from './framework/utils/thowError/ThrowError'
 import { BootstrapGen } from './solutions/core/BootstrapGen'
+import { PresetComponent } from './solutions/core/presetComponent/PresetComponent';
 
 // check node
 new CheckNodeVersionFactory.CheckNodeVersion((<any>PackageInfo).engines.node, (<any>PackageInfo).name).getCheckNodeVersion();
-
+PresetComponent('1','1','1');
 program
     .version(`${(<any>PackageInfo).name} ${(<any>PackageInfo).version}`, '-v, --version')
     .usage('<command> [options]')

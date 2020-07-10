@@ -8,8 +8,10 @@ var PackageInfo = require("../package.json");
 var config_1 = require("./solutions/shared/config/config");
 var ThrowError_1 = require("./framework/utils/thowError/ThrowError");
 var BootstrapGen_1 = require("./solutions/core/BootstrapGen");
+var PresetComponent_1 = require("./solutions/core/presetComponent/PresetComponent");
 // check node
 new CheckNodeVersionFactory.CheckNodeVersion(PackageInfo.engines.node, PackageInfo.name).getCheckNodeVersion();
+PresetComponent_1.PresetComponent('1', '1', '1');
 program
     .version(PackageInfo.name + " " + PackageInfo.version, '-v, --version')
     .usage('<command> [options]')

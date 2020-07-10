@@ -35,34 +35,26 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PresetComponent = void 0;
+exports.getConfig = exports.PresetComponent = void 0;
 var inquirer = require("inquirer");
-var ModalLocalJson = require("../../../framework/local/modalLocal.json");
+var ModalLocalJson = require("../../../framework/local/modalLocal");
+var path = require("path");
 function PresetComponent(fileType, fileName, filePath) {
     return __awaiter(this, void 0, void 0, function () {
-        var action;
+        var choices, action;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    // CheckExist()
-                    console.log("ModalLocalJson", ModalLocalJson);
-                    return [4 /*yield*/, inquirer.prompt([
-                            {
-                                name: 'action',
-                                type: 'checkbox',
-                                message: "\u9488\u5BF9 hooks \u548C redux \u505A\u517C\u5BB9",
-                                choices: [
-                                    { name: 'simple', value: 'simple' },
-                                    { name: 'redux', value: 'redux' },
-                                    { name: 'hooks', value: 'hooks' },
-                                    { name: 'service', value: 'service' },
-                                    { name: 'dto', value: 'dto' },
-                                    { name: '退出', value: false },
-                                ],
-                                default: 'simple'
-                            }
-                        ])];
+                    console.log(22, process.cwd(), process.cwd().split(path.sep).join('/'));
+                    return [2 /*return*/];
                 case 1:
                     action = (_a.sent()).action;
                     if (!action) {
@@ -75,4 +67,14 @@ function PresetComponent(fileType, fileName, filePath) {
     });
 }
 exports.PresetComponent = PresetComponent;
+function getConfig() {
+    var cacheObj = Object.assign({}, ModalLocalJson);
+    var keys = Object.keys(cacheObj);
+    var choice = [];
+    keys.forEach(function (item) {
+        choice.push(cacheObj[item]);
+    });
+    return choice;
+}
+exports.getConfig = getConfig;
 //# sourceMappingURL=PresetComponent.js.map
