@@ -2,9 +2,11 @@ import * as inquirer from 'inquirer';
 import * as chalk from 'chalk';
 import * as shelljs from 'shelljs';
 import { CheckExist } from '../../../framework/utils/checkExist/CheckExist'
+import * as ModalLocalJson from '../../../framework/local/modalLocal.json'
 
 export async function PresetComponent(fileType: string, fileName: string, filePath?: string) {
     // CheckExist()
+    console.log("ModalLocalJson",ModalLocalJson)
     const {action} = await inquirer.prompt([
         {
             name: 'action',

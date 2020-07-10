@@ -38,27 +38,31 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PresetComponent = void 0;
 var inquirer = require("inquirer");
+var ModalLocalJson = require("../../../framework/local/modalLocal.json");
 function PresetComponent(fileType, fileName, filePath) {
     return __awaiter(this, void 0, void 0, function () {
         var action;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, inquirer.prompt([
-                        {
-                            name: 'action',
-                            type: 'checkbox',
-                            message: "\u9488\u5BF9 hooks \u548C redux \u505A\u517C\u5BB9",
-                            choices: [
-                                { name: 'simple', value: 'simple' },
-                                { name: 'redux', value: 'redux' },
-                                { name: 'hooks', value: 'hooks' },
-                                { name: 'service', value: 'service' },
-                                { name: 'dto', value: 'dto' },
-                                { name: '退出', value: false },
-                            ],
-                            default: 'simple'
-                        }
-                    ])];
+                case 0:
+                    // CheckExist()
+                    console.log("ModalLocalJson", ModalLocalJson);
+                    return [4 /*yield*/, inquirer.prompt([
+                            {
+                                name: 'action',
+                                type: 'checkbox',
+                                message: "\u9488\u5BF9 hooks \u548C redux \u505A\u517C\u5BB9",
+                                choices: [
+                                    { name: 'simple', value: 'simple' },
+                                    { name: 'redux', value: 'redux' },
+                                    { name: 'hooks', value: 'hooks' },
+                                    { name: 'service', value: 'service' },
+                                    { name: 'dto', value: 'dto' },
+                                    { name: '退出', value: false },
+                                ],
+                                default: 'simple'
+                            }
+                        ])];
                 case 1:
                     action = (_a.sent()).action;
                     if (!action) {
