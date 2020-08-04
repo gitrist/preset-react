@@ -6,5 +6,4 @@ export abstract class AbstractAction{
         options?: IInput[],
         extraFlags?: string[],
     ): Promise<void>;
-
 }

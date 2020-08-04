@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class %_ComponentName_% extends Component{
+class TestItComponent extends Component{
     componentDidMount(){
 
     }
     render(){
-        return <p> Hello %_ComponentName_% </p>
+        return <p> Hello TestItComponent </p>
     }
 }

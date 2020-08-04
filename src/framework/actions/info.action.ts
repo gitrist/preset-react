@@ -8,13 +8,13 @@ export class InfoAction extends AbstractAction{
     }
 }
 
-const showBanner = () => {
+export const showBanner = () => {
     const TXT = figlet.textSync("R E A C T",{
-        font: 'Ghost',
+        // font: 'Ghost',
         horizontalLayout: 'default',
         verticalLayout: 'default'
     });
-    console.log("\n🚀🚀模板编译脚手架🚀🚀");
-    console.log(TXT,Printer);
-    // Printer.default(TXT)
+    const print = <any>new Printer();
+    print.fromString(`\n       >>>React Preset<<< 脚手架\n ${TXT}`);
+    console.log(print.toString());
 }
