@@ -6,6 +6,7 @@
   "bin": {
     "pr-cli": "node dist/index.js"
   },
+  "author": "rist",
   "scripts": {
     "start": "tsnd --respawn ./src/index.ts -- g -c testIt simple  React",
     "build": "rimraf dist && tsc -b"
@@ -14,8 +15,8 @@
     "type": "git",
     "url": "https://gitee.com/liangwei_develop/preset-react.git"
   },
-  "keywords": [],
-  "author": "",
+  "homepage": "https://gitee.com/liangwei_develop/preset-react.git",
+  "keywords": ["preset","react","typescript","react-preset","react-preset-typescript"],
   "license": "MIT",
   "dependencies": {
     "react": "^16.13.1",
